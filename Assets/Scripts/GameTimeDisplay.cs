@@ -35,6 +35,8 @@ namespace DefaultNamespace
 
         private void OnDestroy()
         {
+            if (EventBus.Instance == null) return;
+
             EventBus.Instance.Unsubscribe<GameTimerTickEvent>(this);
         }
     }

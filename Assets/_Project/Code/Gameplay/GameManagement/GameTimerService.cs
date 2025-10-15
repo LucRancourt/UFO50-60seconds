@@ -1,6 +1,7 @@
 using UnityEngine;
 using _Project.Code.Core.ServiceLocator;
 using _Project.Code.Core.Events;
+using UnityEngine.SceneManagement;
 
 namespace _Project.Code.Gameplay.GameManagement
 {
@@ -35,6 +36,8 @@ namespace _Project.Code.Gameplay.GameManagement
                 _isInGameplayState = true;
                 StartTimer();
             }
+
+            SceneManager.activeSceneChanged += StartTimerSceneChanged;
         }
 
         private void Update()
@@ -69,6 +72,11 @@ namespace _Project.Code.Gameplay.GameManagement
             _timeSinceLastTick = 0f;
             _isRunning = true;
             EventBus.Instance.Publish(new GameTimerStartedEvent { Duration = _durationInSeconds });
+        }
+
+        private void StartTimerSceneChanged(Scene from, Scene to)
+        {
+            StartTimer();
         }
 
         public void StopTimer()
@@ -109,6 +117,8 @@ namespace _Project.Code.Gameplay.GameManagement
 
         public override void Dispose()
         {
+            if (EventBus.Instance == null) return;
+
             EventBus.Instance.Unsubscribe<GameStateChangedEvent>(this);
             EventBus.Instance.Unsubscribe<GamePausedEvent>(this);
             EventBus.Instance.Unsubscribe<GameResumedEvent>(this);
