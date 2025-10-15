@@ -43,6 +43,9 @@ namespace _Project.Code.Gameplay.PlayerControllers.PlayerAiming
             headGO.transform.SetParent(transform);
             headGO.transform.localPosition = new Vector3(0, 1.6f, 0); // Eye height
             _headTarget = headGO.transform;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         protected override void Start()

@@ -8,6 +8,10 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float _interactRange = 10f;
     [SerializeField] private Transform _playerEyes;
 
+    private IInteractable _heldObject = null;
+
+
+
     private void Start()
     {
         _inputActions = new PlayerInputActions();
@@ -18,6 +22,13 @@ public class PlayerInteract : MonoBehaviour
 
     public void TryInteract()
     {
+        if (_heldObject != null)
+        {
+            _heldObject.Interact();
+            _heldObject = null;
+            return;
+        }
+
         RaycastHit hit;
 
         if (Physics.Raycast(
@@ -30,6 +41,7 @@ public class PlayerInteract : MonoBehaviour
             if (interactable != null)
             {
                 interactable.Interact();
+                _heldObject = interactable;
             }
         }
     }
