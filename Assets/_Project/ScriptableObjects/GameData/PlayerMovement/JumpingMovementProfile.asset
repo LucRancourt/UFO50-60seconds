@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f44ec3f721d8e24e9586bb64177faf7, type: 3}
   m_Name: JumpingMovementProfile
   m_EditorClassIdentifier: 
-  <WalkSpeed>k__BackingField: 3
-  <RunSpeed>k__BackingField: 6
+  <WalkSpeed>k__BackingField: 12
+  <RunSpeed>k__BackingField: 12
   <SprintMultiplier>k__BackingField: 1.5
   <Acceleration>k__BackingField: 10
   <Deceleration>k__BackingField: 1

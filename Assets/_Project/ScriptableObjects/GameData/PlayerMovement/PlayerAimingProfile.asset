@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e27c44c62342943b8d46c0d055f8ec, type: 3}
   m_Name: PlayerAimingProfile
   m_EditorClassIdentifier: 
-  <WalkSpeed>k__BackingField: 3
+  <WalkSpeed>k__BackingField: 6
   <RunSpeed>k__BackingField: 6
   <SprintMultiplier>k__BackingField: 1.5
   <Acceleration>k__BackingField: 10
