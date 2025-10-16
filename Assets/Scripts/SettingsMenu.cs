@@ -87,4 +87,9 @@ public class SettingsMenu : Singleton<SettingsMenu>
 
         AudioManager.Instance.SetMixerVolume(keyName, currentValue);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

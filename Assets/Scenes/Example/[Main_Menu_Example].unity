@@ -1561,7 +1561,6 @@ GameObject:
   - component: {fileID: 966731274}
   - component: {fileID: 966731273}
   - component: {fileID: 966731272}
-  - component: {fileID: 966731271}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1589,20 +1588,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -196}
   m_SizeDelta: {x: 776.9207, y: 177.85}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &966731271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966731269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fb4f4d194f91a4a966f86acd9faa50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneToLoad: '[Gameplay_Example]'
-  _useAsync: 0
 --- !u!114 &966731272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,13 +1632,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8103203099623605939, guid: a79d626da75374f4e9b01c16281ea606, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1176702513}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2552,7 +2537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fb4f4d194f91a4a966f86acd9faa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneToLoad: '[Gameplay_Example]'
+  _sceneToLoad: '[PopupInstructions]'
   _useAsync: 0
 --- !u!1 &1410978609
 GameObject:
@@ -2961,7 +2946,6 @@ GameObject:
   - component: {fileID: 1628842939}
   - component: {fileID: 1628842938}
   - component: {fileID: 1628842937}
-  - component: {fileID: 1628842936}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -2989,20 +2973,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -99}
   m_SizeDelta: {x: 776.9207, y: 177.85}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1628842936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628842934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fb4f4d194f91a4a966f86acd9faa50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneToLoad: '[Gameplay_Example]'
-  _useAsync: 0
 --- !u!114 &1628842937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,10 +3017,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7604462963654980634, guid: a79d626da75374f4e9b01c16281ea606, type: 3}
-        m_TargetAssemblyTypeName: _Project.Code.Gameplay.GameManagement.GameManagementService,
-          Assembly-CSharp
-        m_MethodName: TransitionToPaused
+      - m_Target: {fileID: 1176702513}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: OpenMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
