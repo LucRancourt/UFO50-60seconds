@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using _Project.Code.Core.Patterns;
+using TMPro;
 
 public class TaskManager : Singleton<TaskManager>
 {
     [SerializeField] private List<Task> _tasks = new();
+    [SerializeField] private TextMeshProUGUI _taskList;
+    private List<string> _taskNames = new();
 
     private void OnEnable()
     {
@@ -12,6 +15,13 @@ public class TaskManager : Singleton<TaskManager>
         {
             task.OnTaskCompleted += HandleTaskCompleted;
         }
+
+        foreach (var task in _tasks)
+        {
+            _taskNames.Add(task.taskName.ToString());
+        }
+
+        DisplayTasks();
     }
 
     private void OnDisable()
@@ -24,6 +34,22 @@ public class TaskManager : Singleton<TaskManager>
 
     private void HandleTaskCompleted(Task completedTask)
     {
-        Debug.Log($"Task has been completed: {completedTask.taskName}");
+        if (_tasks.Contains(completedTask))
+        {
+            _tasks.Remove(completedTask);
+            Debug.Log($"Remaining tasks: {_tasks.Count}");
+        }
+        else
+        {
+
+        }
+    }
+
+    private void DisplayTasks()
+    {
+        foreach (var taskName in _taskNames)
+        {
+            _taskList.text += $"> {taskName} <\n";
+        }
     }
 }
