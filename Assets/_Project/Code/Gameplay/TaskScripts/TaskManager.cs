@@ -10,7 +10,7 @@ public class TaskManager : Singleton<TaskManager>
 
     private HashSet<Task> _completedTasks = new();
 
-    private void OnEnable()
+    private void Start()
     {
         foreach (var task in _tasks)
         {
