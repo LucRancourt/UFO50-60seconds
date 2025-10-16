@@ -9,6 +9,8 @@ public class TaskManager : Singleton<TaskManager>
     [SerializeField] private TextMeshProUGUI _taskList;
     private List<string> _taskNames = new();
 
+    private HashSet<Task> _completedTasks = new();
+
     private void OnEnable()
     {
         foreach (var task in _tasks)
@@ -34,22 +36,19 @@ public class TaskManager : Singleton<TaskManager>
 
     private void HandleTaskCompleted(Task completedTask)
     {
-        if (_tasks.Contains(completedTask))
-        {
-            _tasks.Remove(completedTask);
-            Debug.Log($"Remaining tasks: {_tasks.Count}");
-        }
-        else
-        {
+        _completedTasks.Add(completedTask);
 
-        }
+        DisplayTasks();
     }
-
     private void DisplayTasks()
     {
-        foreach (var taskName in _taskNames)
+        _taskList.text = "";
+
+        foreach (var task in _tasks)
         {
-            _taskList.text += $"> {taskName} <\n";
+            bool isCompleted = _completedTasks.Contains(task);
+            string checkmark = isCompleted ? "*" : "";
+            _taskList.text += $"> {task.taskName} {checkmark}\n";
         }
     }
 }
