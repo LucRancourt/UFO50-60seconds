@@ -9528,8 +9528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689113b48bb1c7a488d1672875db0100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactColliderRadius: 2
-  throwForce: 50
+  interactColliderRadius: 0.5
+  throwForce: 10
 --- !u!54 &871815606
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11422,6 +11422,14 @@ PrefabInstance:
     - target: {fileID: 3669901919700197333, guid: 0a6df1c2fe3e1ac4fbe9321fc7ed41b6, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487567182319453292, guid: 0a6df1c2fe3e1ac4fbe9321fc7ed41b6, type: 3}
+      propertyPath: m_Height
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487567182319453292, guid: 0a6df1c2fe3e1ac4fbe9321fc7ed41b6, type: 3}
+      propertyPath: m_Radius
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 7636853018378030737, guid: 0a6df1c2fe3e1ac4fbe9321fc7ed41b6, type: 3}
       propertyPath: m_Name
@@ -17575,7 +17583,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684298916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 304d9f0024fd27d44bc7a2497c82cf3b, type: 3}
   m_Name: 
