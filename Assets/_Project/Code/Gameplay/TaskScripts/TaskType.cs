@@ -2,7 +2,13 @@ using UnityEngine;
 
 public enum TaskType
 {
-   TaskEatApple,
-   TaskDrinkCoffee,
-   TaskReadBook
+   EatApple,
+   DrinkCoffee,
+   ReadBook,
+   ShakePlant,
+   FlushToilet,
+   TurnOnRadio,
+   MicrowaveBreakfast,
+   BlendIce,
+   DoWork
 }
