@@ -7,7 +7,6 @@ public class TaskManager : Singleton<TaskManager>
 {
     [SerializeField] private List<Task> _tasks = new();
     [SerializeField] private TextMeshProUGUI _taskList;
-    private List<string> _taskNames = new();
 
     private HashSet<Task> _completedTasks = new();
 
@@ -16,11 +15,6 @@ public class TaskManager : Singleton<TaskManager>
         foreach (var task in _tasks)
         {
             task.OnTaskCompleted += HandleTaskCompleted;
-        }
-
-        foreach (var task in _tasks)
-        {
-            _taskNames.Add(task.taskName.ToString());
         }
 
         DisplayTasks();
@@ -47,8 +41,10 @@ public class TaskManager : Singleton<TaskManager>
         foreach (var task in _tasks)
         {
             bool isCompleted = _completedTasks.Contains(task);
-            string checkmark = isCompleted ? "*" : "";
-            _taskList.text += $"> {task.taskName} {checkmark}\n";
+            string strikeThroughStart = isCompleted ? "<s>" : "";
+            string strikeThroughEnd = isCompleted ? "</s>" : "";
+
+            _taskList.text += $"> {strikeThroughStart} {task.taskName} {strikeThroughEnd}\n";
         }
     }
 }
