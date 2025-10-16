@@ -22,7 +22,7 @@ namespace _Project.Code.Gameplay.Player
 
         public override void Initialize()
         {
-            Debug.Log("PlayerService initialized");
+
         }
 
         public void RegisterPlayer(BasePlayerController controller)
@@ -32,7 +32,6 @@ namespace _Project.Code.Gameplay.Player
             _activePlayer = controller.transform;
             _activeController = controller;
 
-            Debug.Log($"Player registered: {controller.name}");
 
             // Notify other systems that player changed
             EventBus.Instance.Publish(new PlayerRegisteredEvent
@@ -48,7 +47,6 @@ namespace _Project.Code.Gameplay.Player
             {
                 _activePlayer = null;
                 _activeController = null;
-                Debug.Log($"Player unregistered: {controller.name}");
             }
         }
 

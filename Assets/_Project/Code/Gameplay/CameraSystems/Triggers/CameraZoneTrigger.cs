@@ -26,7 +26,6 @@ namespace _Project.Code.Gameplay.CameraSystems.Triggers
                     Priority = _priority
                 });
 
-                Debug.Log($"Entered camera zone: {_cameraProfile.name}");
             }
         }
 
@@ -47,7 +46,6 @@ namespace _Project.Code.Gameplay.CameraSystems.Triggers
                 Profile = _cameraProfile
             });
 
-            Debug.Log($"Exited camera zone: {_cameraProfile?.name}");
         }
 
         protected override Color GetGizmoColor()

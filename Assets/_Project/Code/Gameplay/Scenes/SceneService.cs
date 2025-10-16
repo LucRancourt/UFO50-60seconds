@@ -12,7 +12,6 @@ namespace _Project.Code.Gameplay.Scenes
         public override void Initialize()
         {
             CurrentSceneName = SceneManager.GetActiveScene().name;
-            Debug.Log($"[SceneService] Initialized. Current scene: {CurrentSceneName}");
         }
 
         public void LoadScene(string sceneName)

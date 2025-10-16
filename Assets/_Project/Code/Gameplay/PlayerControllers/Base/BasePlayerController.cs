@@ -25,7 +25,6 @@ namespace _Project.Code.Gameplay.PlayerControllers.Base
             GroundCheck = GetComponent<GroundCheck>();
             AnimationController = GetComponent<PlayerAnimationController>();
 
-            Debug.Log($"AnimationController is null: {AnimationController == null}");
         }
 
         protected virtual void Start()

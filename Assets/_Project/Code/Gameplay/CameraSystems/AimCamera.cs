@@ -72,7 +72,6 @@ namespace _Project.Code.Gameplay.CameraSystems
         private void RegisterWithService()
         {
             _cameraService.RegisterCamera(_vcam, setAsActive: true);
-            Debug.Log($"AimCamera registered with CameraService");
         }
 
         private void ConnectToPlayer()
@@ -94,7 +93,6 @@ namespace _Project.Code.Gameplay.CameraSystems
                 transform.localPosition = _currentOffset;
                 transform.localRotation = Quaternion.identity;
 
-                Debug.Log($"AimCamera attached to: {attachPoint.name}");
             }
         }
 
@@ -116,7 +114,6 @@ namespace _Project.Code.Gameplay.CameraSystems
                 transform.localPosition = _currentOffset;
                 transform.localRotation = Quaternion.identity;
 
-                Debug.Log($"AimCamera attached to: {attachPoint.name}");
             }
         }
 

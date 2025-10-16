@@ -42,7 +42,6 @@ namespace _Project.Code.Gameplay.CameraSystems
             // Listen for player registration
             EventBus.Instance.Subscribe<PlayerRegisteredEvent>(this, OnPlayerRegistered);
 
-            Debug.Log("CameraService initialized successfully.");
         }
 
         private void OnPlayerRegistered(PlayerRegisteredEvent evt)
@@ -51,7 +50,6 @@ namespace _Project.Code.Gameplay.CameraSystems
             if (_activeVirtualCamera != null && evt.Player != null)
             {
                 _activeVirtualCamera.Target.TrackingTarget = evt.Player;
-                Debug.Log($"Camera now tracking player: {evt.Player.name}");
             }
         }
 
@@ -69,7 +67,6 @@ namespace _Project.Code.Gameplay.CameraSystems
             if (playerService?.GetPlayerTransform() != null)
             {
                 vcam.Target.TrackingTarget = playerService.GetPlayerTransform();
-                Debug.Log($"Camera auto-connected to player: {playerService.GetPlayerTransform().name}");
             }
 
             // Notify other systems

@@ -60,7 +60,6 @@ namespace _Project.Code.Gameplay.PlayerControllers.PlayerAiming.States
 
             if (evt.Input.magnitude > ServiceLocator.Get<InputService>().Profile.MovementMagnitudeThreshold)
             {
-                Debug.Log($"Movement magnitude of {evt.Input.magnitude}");
                 if (_controller.IsSprinting)
                 {
                     _stateMachine.TransitionTo<PARunningState>();
