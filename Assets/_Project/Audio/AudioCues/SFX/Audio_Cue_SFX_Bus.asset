@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Audio_Cue_SFX_Bus
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 76e1f167db051354b8ba5f98d16a26d6, type: 3}
-  <Volume>k__BackingField: 1
-  <Pitch>k__BackingField: 1
+  <Volume>k__BackingField: 0.6
+  <Pitch>k__BackingField: 0.6

@@ -8,6 +8,7 @@ public class BusScript : MonoBehaviour
     [Header("Bus Settings")]
     [SerializeField] private float _driveSpeed;
     [SerializeField] private Vector3 _driveDirection;
+    [SerializeField] private AudioCue _busSound;
 
     [Header("References")]
     [SerializeField] private string _playerTag = "Player";
@@ -19,6 +20,7 @@ public class BusScript : MonoBehaviour
     {
         if (other.CompareTag(_playerTag))
         {
+            AudioManager.Instance.PlaySound(_busSound);
             _playerTransform = other.transform;
 
             _playerTransform.SetParent(transform);
