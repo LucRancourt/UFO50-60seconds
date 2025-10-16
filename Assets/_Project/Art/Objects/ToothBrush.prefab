@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3135323096856775896}
   - component: {fileID: 4811627629980374887}
   - component: {fileID: 2336519675053718426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bristle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4539945864406129098}
   - component: {fileID: 320956868285899971}
   - component: {fileID: 888809683689932795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ToothBrush
   m_TagString: Untagged
   m_Icon: {fileID: 0}

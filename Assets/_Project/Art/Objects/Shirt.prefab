@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8464014220753963980}
   - component: {fileID: 4049575223505444277}
   - component: {fileID: 1491246881794898706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 303910546468033650}
   - component: {fileID: 7959571432271005196}
   - component: {fileID: 8176907352893715699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sleeve (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 2725886231977097054}
   - component: {fileID: 2470995102162187969}
   - component: {fileID: 2130231709485316895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sleeve
   m_TagString: Untagged
   m_Icon: {fileID: 0}

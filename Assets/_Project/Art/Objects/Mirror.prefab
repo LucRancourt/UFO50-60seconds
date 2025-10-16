@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3740642809164947287}
   - component: {fileID: 8664269039683430185}
   - component: {fileID: 3772221539056050619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5096780954035204386}
   - component: {fileID: 6302988446156614000}
   - component: {fileID: 4725020312511953473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MirrorSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}

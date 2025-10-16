@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7753470191901541920}
   - component: {fileID: 7241290384754564685}
   - component: {fileID: 1144906827794837355}
-  m_Layer: 0
+  - component: {fileID: 7840497166091163476}
+  m_Layer: 6
   m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +111,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7840497166091163476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507611773420580450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2dcc2b2f936614c91c687b5a4fd29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _linkedTask: {fileID: 11400000, guid: b180fa00f5d01834db9c95403384338f, type: 2}
+  _taskDuration: 2
+  _completesInstantly: 0
 --- !u!1 &3932504431245816408
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +138,7 @@ GameObject:
   - component: {fileID: 8357314225763390871}
   - component: {fileID: 5629752324598544051}
   - component: {fileID: 8347944866787960545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AppleStem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +246,7 @@ GameObject:
   - component: {fileID: 6156079797264001918}
   - component: {fileID: 2759574408721554713}
   - component: {fileID: 7501032076578027592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AppleLeaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
