@@ -47,7 +47,7 @@ public class BusScript : MonoBehaviour
 
     private IEnumerator BeginWinDelay()
     {
-        yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(2);
     }
 }

@@ -34,6 +34,7 @@ public class TaskManager : Singleton<TaskManager>
 
         DisplayTasks();
     }
+
     private void DisplayTasks()
     {
         _taskList.text = "";
