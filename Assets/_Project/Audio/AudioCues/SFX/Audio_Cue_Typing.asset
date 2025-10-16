@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Audio_Cue_Typing
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 80359bba4993b1244818e7c1c8a5f327, type: 3}
-  <Volume>k__BackingField: 1
+  <Volume>k__BackingField: 0.595
   <Pitch>k__BackingField: 1

@@ -13,7 +13,7 @@ public class Task : ScriptableObject
     {
         if (isCompleted) return;
         isCompleted = true;
-        Debug.Log($"Task Completed: {taskName}");
+        //Debug.Log($"Task Completed: {taskName}");
         AudioManager.Instance.PlaySound(taskCompleteAudioCue);
         OnTaskCompleted?.Invoke(this);
     }

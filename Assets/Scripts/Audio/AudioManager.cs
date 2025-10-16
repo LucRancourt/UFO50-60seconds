@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using _Project.Code.Core.Patterns; 
+using _Project.Code.Core.Patterns;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -11,6 +12,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioMixerGroup sfxMixer;
 
     [SerializeField] private AudioCue defaultMusic;
+    private AudioCue _music;
     private AudioSource _musicSource;
 
     private List<AudioSource> _soundEffectSources = new List<AudioSource>();
@@ -21,6 +23,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         LoadVolume();
         PlayMusic(defaultMusic);
+        SceneManager.activeSceneChanged += Reset;
     }
 
     #region Volume
@@ -37,9 +40,30 @@ public class AudioManager : Singleton<AudioManager>
         }
     #endregion
 
-    #region Plays
-        private void PlayMusic(AudioCue music)
+    public void StopMusic()
+    {
+        _musicSource.Stop();
+    }
+
+    private void Reset(Scene scene, Scene newScene)
+    {
+        foreach (AudioSource source in _soundEffectSources)
         {
+            source.Stop();
+        }
+    }
+
+    #region Plays
+    public void ResumeMusic()
+    {
+        _musicSource.loop = true;
+        _musicSource.Play();
+    }
+
+    private void PlayMusic(AudioCue music)
+        {
+            _music = music;
+
             _musicSource = gameObject.AddComponent<AudioSource>();
             _musicSource.outputAudioMixerGroup = musicMixer;
 
@@ -57,6 +81,17 @@ public class AudioManager : Singleton<AudioManager>
 
             soundSource.Play();
         }
+
+    public AudioSource PlaySoundReturn(AudioCue sound)
+    {
+        AudioSource soundSource = GetAvailableSFXSource();
+
+        SetupSource(ref soundSource, sound);
+
+        soundSource.Play();
+
+        return soundSource;
+    }
 
         public void PlayRandomSound(List<AudioCue> listOfSFX)
         {

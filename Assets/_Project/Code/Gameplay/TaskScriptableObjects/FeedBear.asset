@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c252675640651841935c62bbf7076dc, type: 3}
-  m_Name: FlushToilet
+  m_Name: FeedBear
   m_EditorClassIdentifier: 
-  taskName: 2
+  taskName: 8
   taskCompleteAudioCue: {fileID: 11400000, guid: e7714c25ea73a584ea346b54e1241b80, type: 2}

@@ -1,25 +1,21 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
-public class CounterTask : TaskBlueprint
+public class CounterTask : TaskBlueprint, IInteractable
 {
-    [SerializeField] private List<TaskBlueprint> objects;
-    [SerializeField] private int numberRequired;
-    private int _totalObjects;
+    public Action OnCompleted;
 
-    private void Start()
+    private bool complete = false;
+    [SerializeField] private List<AudioCue> audioCues;
+
+    public void Interact(PlayerInteract player)
     {
-        _totalObjects = objects.Count;
+        if (complete) return;
+        complete = true;
 
-        if (_totalObjects - numberRequired < 0)
-            numberRequired = _totalObjects;
-    }
+        OnCompleted?.Invoke();
 
-    public void DecreaseCount(TaskBlueprint interacted)
-    {
-        objects.Remove(interacted);
-
-        if (objects.Count == _totalObjects - numberRequired)
-            _linkedTask?.Complete();
+        AudioManager.Instance.PlayRandomSound(audioCues);
     }
 }

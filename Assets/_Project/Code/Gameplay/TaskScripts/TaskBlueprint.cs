@@ -7,20 +7,24 @@ public abstract class TaskBlueprint : MonoBehaviour
     [SerializeField] protected float _taskDuration;
     [SerializeField] protected bool _completesInstantly;
 
+
     private void Awake()
     {
-        _linkedTask.OnTaskCompleted += DisableOutline;
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
 
         Outline outline = gameObject.AddComponent<Outline>();
+
+        if (_linkedTask) _linkedTask.OnTaskCompleted += DisableOutline;
 
         outline.OutlineMode = Outline.Mode.OutlineVisible;
         outline.OutlineColor = Color.yellow;
         outline.OutlineWidth = 10f;
     }
 
-    private void DisableOutline(Task task)
+    protected void DisableOutline(Task task)
     {
         GetComponent<Outline>().enabled = false;
+        Destroy(this);
     }
 
     public virtual IEnumerator DoTaskRoutine()

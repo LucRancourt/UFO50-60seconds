@@ -10,6 +10,8 @@ public class TaskTriggerZone : TriggerZone
     private float _totalDurationRequired;
     [SerializeField] private bool resetTimeOnExit = false;
     private bool _isBeingCompleted;
+    [SerializeField] private AudioCue audioCue;
+    private AudioSource _source;
 
 
     // Functions
@@ -25,7 +27,10 @@ public class TaskTriggerZone : TriggerZone
         if (obj.TryGetComponent(out Pickup pickup))
         {
             if (pickup == objectRequired)
+            {
                 _isBeingCompleted = true;
+                _source = AudioManager.Instance.PlaySoundReturn(audioCue);
+            }
         }
     }
 
@@ -36,6 +41,8 @@ public class TaskTriggerZone : TriggerZone
             if (pickup == objectRequired)
             {
                 _isBeingCompleted = false;
+
+                _source.Stop();
 
                 if (resetTimeOnExit) durationRequired = _totalDurationRequired;
             }
