@@ -9,6 +9,8 @@ public class Pickup : MonoBehaviour, IInteractable
     private bool _isKinematic;
     private Collider _collider;
 
+    [SerializeField] private LayerMask interactableLayer;
+
     private SphereCollider _interactCollider;
     [SerializeField] private float interactColliderRadius = 2.0f;
 
@@ -93,8 +95,18 @@ public class Pickup : MonoBehaviour, IInteractable
     private void RemoveParent()
     {
         _throwDirection = transform.parent.forward;
-        
+
         transform.parent = null;
+
+        if (Physics.Raycast(
+            _player.transform.position,
+            _player.transform.forward, out RaycastHit hit,
+            10.0f))
+        {
+            var interactable = hit.collider.GetComponent<Pickup>();
+            if (interactable != this)
+                transform.position = _player.transform.position;
+        }
 
         _rigidbody.useGravity = true;
     }
