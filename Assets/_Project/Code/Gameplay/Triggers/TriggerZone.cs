@@ -16,23 +16,12 @@ namespace _Project.Code.Gameplay.Triggers
 
         private void OnTriggerEnter(Collider other)
         {
-            if (IsValidTrigger(other))
-            {
-                OnZoneEntered(other.gameObject);
-            }
+            OnZoneEntered(other.gameObject);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (IsValidTrigger(other))
-            {
-                OnZoneExited(other.gameObject);
-            }
-        }
-
-        protected virtual bool IsValidTrigger(Collider other)
-        {
-            return other.GetComponent<BasePlayerController>() != null;
+            OnZoneExited(other.gameObject);
         }
 
         protected abstract void OnZoneEntered(GameObject obj);
