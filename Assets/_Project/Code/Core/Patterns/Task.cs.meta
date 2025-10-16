@@ -1,2 +1,12 @@
 fileFormatVersion: 2
 guid: 6c252675640651841935c62bbf7076dc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - taskCompleteAudioCue: {fileID: 11400000, guid: e7714c25ea73a584ea346b54e1241b80, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
