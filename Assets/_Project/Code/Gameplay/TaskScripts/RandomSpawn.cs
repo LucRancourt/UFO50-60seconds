@@ -5,6 +5,13 @@ public class RandomSpawn : MonoBehaviour
 {
     private void Start()
     {
+        if (PlayerPrefs.GetInt("RandomlySpawnInteractables") == 0)
+        {
+            Destroy(this);
+            return;
+        }
+
+
         TaskBlueprint[] _taskBlueprints = FindObjectsByType<TaskBlueprint>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         Pickup[] _pickups = FindObjectsByType<Pickup>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 

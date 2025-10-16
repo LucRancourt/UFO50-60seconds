@@ -22,6 +22,8 @@ public class PlayerInteract : MonoBehaviour
 
     public void TryInteract()
     {
+        if (!this) return;
+
         if (HeldObject != null)
         {
             HeldObject.Interact(this);
