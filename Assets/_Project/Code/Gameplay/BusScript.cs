@@ -10,6 +10,8 @@ public class BusScript : MonoBehaviour
     [SerializeField] private Vector3 _driveDirection;
     [SerializeField] private AudioCue _busSound;
 
+    [SerializeField] private bool sitInBus;
+
     [Header("References")]
     [SerializeField] private string _playerTag = "Player";
 
@@ -24,6 +26,8 @@ public class BusScript : MonoBehaviour
             _playerTransform = other.transform;
 
             _playerTransform.SetParent(transform);
+
+            if (sitInBus) _playerTransform.localPosition = new Vector3(0.600000024f, 1.6500004f, -0.119999997f);
 
             var controller = _playerTransform.GetComponent<CharacterController>();
             if (controller) controller.enabled = false;

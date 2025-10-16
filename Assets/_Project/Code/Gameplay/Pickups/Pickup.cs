@@ -48,7 +48,7 @@ public class Pickup : MonoBehaviour, IInteractable
 
     public void Interact(PlayerInteract player)
     {
-        if (transform.parent == null)
+        if (transform.parent != player.transform)
             PickupObject();
         else
             ThrowObject();
