@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using _Project.Code.Core.Patterns;
 using TMPro;
 
-public class TaskManager : Singleton<TaskManager>
+public class TaskManager : MonoBehaviour
 {
     [SerializeField] private List<Task> _tasks = new();
     [SerializeField] private TextMeshProUGUI _taskList;
@@ -15,6 +15,7 @@ public class TaskManager : Singleton<TaskManager>
         foreach (var task in _tasks)
         {
             task.OnTaskCompleted += HandleTaskCompleted;
+            task.Reset();
         }
 
         DisplayTasks();
@@ -31,7 +32,7 @@ public class TaskManager : Singleton<TaskManager>
     private void HandleTaskCompleted(Task completedTask)
     {
         _completedTasks.Add(completedTask);
-
+        ScoreManager.Instance.UpdateScore();
         DisplayTasks();
     }
 
