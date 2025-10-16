@@ -15,4 +15,11 @@ public class RadioTask : TaskBlueprint, IInteractable
         else
             AudioManager.Instance.StopMusic();
     }
+
+    protected override void DisableOutline(Task task)
+    {
+        if (!this) return;
+
+        GetComponent<Outline>().enabled = false;
+    }
 }

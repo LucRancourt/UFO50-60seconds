@@ -21,7 +21,7 @@ public abstract class TaskBlueprint : MonoBehaviour
         outline.OutlineWidth = 10f;
     }
 
-    protected void DisableOutline(Task task)
+    protected virtual void DisableOutline(Task task)
     {
         GetComponent<Outline>().enabled = false;
         Destroy(this);

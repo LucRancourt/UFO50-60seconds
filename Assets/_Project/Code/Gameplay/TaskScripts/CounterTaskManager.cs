@@ -20,7 +20,6 @@ public class CounterTaskManager : TaskBlueprint
     public void IncreaseCount()
     {
         _totalTasksCompleted++;
-        Debug.Log(_totalTasksCompleted);
 
         
         if (_totalTasksCompleted == numberRequired)

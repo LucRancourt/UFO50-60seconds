@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using _Project.Code.Core.Patterns;
 
-public class SettingsMenu : Singleton<SettingsMenu>
+public class SettingsMenu : MonoBehaviour
 {
     // Variables
     [Header("Settings UI")]
@@ -28,10 +27,8 @@ public class SettingsMenu : Singleton<SettingsMenu>
 
 
     // Functions
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
-
         closeSettingsMenu.onClick.AddListener(CloseMenu);
         closeSettingsMenu.onClick.AddListener(SaveSettings);
 
