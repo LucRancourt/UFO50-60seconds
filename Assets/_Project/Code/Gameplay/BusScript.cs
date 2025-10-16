@@ -1,11 +1,13 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider))]
 public class BusScript : MonoBehaviour
 {
     [Header("Bus Settings")]
-    [SerializeField] private float _driveSpeed = 5f;
-    [SerializeField] private Vector3 _driveDirection = Vector3.forward;
+    [SerializeField] private float _driveSpeed;
+    [SerializeField] private Vector3 _driveDirection;
 
     [Header("References")]
     [SerializeField] private string _playerTag = "Player";
@@ -25,6 +27,7 @@ public class BusScript : MonoBehaviour
             if (controller) controller.enabled = false;
 
             _isDriving = true;
+            StartCoroutine(BeginWinDelay());
         }
     }
 
@@ -34,5 +37,11 @@ public class BusScript : MonoBehaviour
         {
             transform.Translate(_driveDirection.normalized * _driveSpeed * Time.deltaTime, Space.World);
         }
+    }
+
+    private IEnumerator BeginWinDelay()
+    {
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene(1);
     }
 }

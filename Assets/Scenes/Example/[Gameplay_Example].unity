@@ -13783,9 +13783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05f44506b4b042419ad32eefbfb76f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driveSpeed: 200
-  driveDirection: {x: 0, y: 1, z: 1}
-  playerTag: Player
+  _driveSpeed: 300
+  _driveDirection: {x: 0, y: 1, z: 1}
+  _playerTag: Player
 --- !u!65 &1636953657
 BoxCollider:
   m_ObjectHideFlags: 0
