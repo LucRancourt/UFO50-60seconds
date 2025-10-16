@@ -5,7 +5,7 @@ public enum TaskType
    EatApple,
    DrinkCoffee,
    ReadBook,
-   ShakePlant,
+   ShakePlants,
    FlushToilet,
    TurnOnRadio,
    MicrowaveBreakfast,

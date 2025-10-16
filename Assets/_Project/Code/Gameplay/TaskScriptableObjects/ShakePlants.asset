@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e4004af6d3aee4c8667a05a4121721, type: 3}
-  m_Name: Audio_Cue_SFX_Mixer
+  m_Script: {fileID: 11500000, guid: 6c252675640651841935c62bbf7076dc, type: 3}
+  m_Name: ShakePlants
   m_EditorClassIdentifier: 
-  <Clip>k__BackingField: {fileID: 8300000, guid: 7740b73fc59abe0429197302e2f4845c, type: 3}
-  <Volume>k__BackingField: 1
-  <Pitch>k__BackingField: 1
+  taskName: 0
+  taskCompleteAudioCue: {fileID: 11400000, guid: e7714c25ea73a584ea346b54e1241b80, type: 2}
