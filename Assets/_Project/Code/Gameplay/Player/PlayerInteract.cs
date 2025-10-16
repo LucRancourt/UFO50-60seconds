@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float _interactRange = 10f;
     [SerializeField] private Transform _playerEyes;
 
-    private IInteractable _heldObject = null;
+    public IInteractable HeldObject { get; private set; }
 
 
 
@@ -22,10 +22,10 @@ public class PlayerInteract : MonoBehaviour
 
     public void TryInteract()
     {
-        if (_heldObject != null)
+        if (HeldObject != null)
         {
-            _heldObject.Interact();
-            _heldObject = null;
+            HeldObject.Interact(this);
+            HeldObject = null;
             return;
         }
 
@@ -40,8 +40,8 @@ public class PlayerInteract : MonoBehaviour
             var interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null)
             {
-                interactable.Interact();
-                _heldObject = interactable;
+                interactable.Interact(this);
+                HeldObject = interactable;
             }
         }
     }

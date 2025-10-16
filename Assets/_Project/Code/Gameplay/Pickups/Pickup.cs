@@ -46,7 +46,7 @@ public class Pickup : MonoBehaviour, IInteractable
         _player = Camera.main;
     }
 
-    public void Interact()
+    public void Interact(PlayerInteract player)
     {
         if (transform.parent == null)
             PickupObject();

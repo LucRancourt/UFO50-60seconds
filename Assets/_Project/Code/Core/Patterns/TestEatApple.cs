@@ -9,7 +9,7 @@ public class TestEatApple : MonoBehaviour, IInteractable
     [SerializeField] private float _taskDuration;
     [SerializeField] private bool _completesInstantly;
 
-    public void Interact()
+    public void Interact(PlayerInteract player)
     {
         Debug.Log($"Interacted with {gameObject.name}");
 
