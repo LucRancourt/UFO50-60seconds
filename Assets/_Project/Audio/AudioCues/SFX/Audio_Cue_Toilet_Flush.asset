@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Audio_Cue_Toilet_Flush
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: abbb2ebd6149b7745a6be0c91f78dff3, type: 3}
-  <Volume>k__BackingField: 1
+  <Volume>k__BackingField: 0.18
   <Pitch>k__BackingField: 1

@@ -8053,6 +8053,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7840497166091163476, guid: 5099ecab92a27a24abcd55c551f1923d, type: 3}
+      propertyPath: audioCue
+      value: 
+      objectReference: {fileID: 11400000, guid: 91c846ce0455c974b8d9e6a981949802, type: 2}
+    - target: {fileID: 7840497166091163476, guid: 5099ecab92a27a24abcd55c551f1923d, type: 3}
+      propertyPath: _taskDuration
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

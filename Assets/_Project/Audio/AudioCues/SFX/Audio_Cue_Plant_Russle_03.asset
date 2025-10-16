@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Audio_Cue_Plant_Russle_03
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 8300000, guid: 9a0d8b91d38bf2c45846d6e0ddbd073e, type: 3}
-  <Volume>k__BackingField: 1
+  <Volume>k__BackingField: 0.602
   <Pitch>k__BackingField: 1
