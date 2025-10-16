@@ -22,15 +22,7 @@ namespace _Project.Code.Gameplay.Input
             _inputActions.Gameplay.Move.canceled += HandleMoveCanceled;
             _inputActions.Gameplay.Look.performed += HandleLookPerformed;
             _inputActions.Gameplay.Look.canceled += HandleLookCanceled;
-            _inputActions.Gameplay.Jump.performed += HandleJumpPerformed;
-            _inputActions.Gameplay.Jump.canceled += HandleJumpCanceled;
-            _inputActions.Gameplay.Sprint.performed += HandleSprintPerformed;
-            _inputActions.Gameplay.Sprint.canceled += HandleSprintCanceled;
-            _inputActions.Gameplay.Attack.performed += HandleAttackPerformed;
             _inputActions.Gameplay.Interact.performed += HandleInteractPerformed;
-            _inputActions.Gameplay.Dodge.performed += HandleDodgePerformed;
-            _inputActions.Gameplay.LockOn.performed += HandleLockOnPerformed;
-            _inputActions.Gameplay.LockOn.canceled += HandleLockOnCanceled;
 
             _inputActions.Gameplay.Enable();
             
@@ -56,49 +48,9 @@ namespace _Project.Code.Gameplay.Input
             EventBus.Instance.Publish(new LookInputEvent { Input = Vector2.zero });
         }
 
-        private void HandleJumpPerformed(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new JumpInputEvent { IsPressed = true });
-        }
-
-        private void HandleJumpCanceled(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new JumpInputEvent { IsPressed = false });
-        }
-
-        private void HandleSprintPerformed(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new SprintInputEvent { IsPressed = true });
-        }
-
-        private void HandleSprintCanceled(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new SprintInputEvent { IsPressed = false });
-        }
-
-        private void HandleAttackPerformed(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new AttackInputEvent());
-        }
-
         private void HandleInteractPerformed(InputAction.CallbackContext context)
         {
             EventBus.Instance.Publish(new InteractInputEvent());
-        }
-
-        private void HandleDodgePerformed(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new DodgeInputEvent());
-        }
-
-        private void HandleLockOnPerformed(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new LockOnInputEvent { IsPressed = true });
-        }
-
-        private void HandleLockOnCanceled(InputAction.CallbackContext context)
-        {
-            EventBus.Instance.Publish(new LockOnInputEvent { IsPressed = false });
         }
 
         public void EnableGameplayActions()
@@ -127,14 +79,7 @@ namespace _Project.Code.Gameplay.Input
                 _inputActions.Gameplay.Move.canceled -= HandleMoveCanceled;
                 _inputActions.Gameplay.Look.performed -= HandleLookPerformed;
                 _inputActions.Gameplay.Look.canceled -= HandleLookCanceled;
-                _inputActions.Gameplay.Jump.performed -= HandleJumpPerformed;
-                _inputActions.Gameplay.Jump.canceled -= HandleJumpCanceled;
-                _inputActions.Gameplay.Sprint.performed -= HandleSprintPerformed;
-                _inputActions.Gameplay.Sprint.canceled -= HandleSprintCanceled;
-                _inputActions.Gameplay.Attack.performed -= HandleAttackPerformed;
                 _inputActions.Gameplay.Interact.performed -= HandleInteractPerformed;
-                _inputActions.Gameplay.Dodge.performed -= HandleDodgePerformed;
-                _inputActions.Gameplay.LockOn.performed -= HandleLockOnPerformed;
 
                 _inputActions.Gameplay.Disable();
                 _inputActions.Dispose();
