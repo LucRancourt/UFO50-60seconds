@@ -7,7 +7,7 @@ public abstract class TaskBlueprint : MonoBehaviour
     [SerializeField] protected float _taskDuration;
     [SerializeField] protected bool _completesInstantly;
 
-    public IEnumerator DoTaskRoutine()
+    public virtual IEnumerator DoTaskRoutine()
     {
         if (_completesInstantly)
         {
